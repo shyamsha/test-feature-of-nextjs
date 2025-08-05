@@ -1,3 +1,4 @@
+import Info from "@/components/Info";
 import React from "react";
 
 export const metadata = {
@@ -6,7 +7,12 @@ export const metadata = {
 };
 
 function About() {
-  return <div>About</div>;
+  return (
+    <Info
+      title="About Page"
+      description="This is the about page of my Next.js app"
+    />
+  );
 }
 
 export default About;
