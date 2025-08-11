@@ -1,5 +1,6 @@
 import Info from "@/components/Info";
 import React from "react";
+import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Product Review",
@@ -11,6 +12,9 @@ function ProductReview({
 }: {
   params: { productId: string; reviewId: string };
 }) {
+  if (parseInt(params.reviewId) > 100) {
+    notFound(); // Simulating a not found condition for review IDs greater than 100
+  }
   return (
     <Info
       title={`Product Review for ${params.productId}`}
