@@ -14,7 +14,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <header style={{ backgroundColor: "lightcoral", padding: "1rem" }}>
+          <h1>Welcome to My Next.js App</h1>
+        </header>
         <div>{children}</div>
+        <footer style={{ backgroundColor: "lightcoral", padding: "1rem" }}>
+          <p>© 2025 My Next.js App. All rights reserved.</p>
+        </footer>
       </body>
     </html>
   );
