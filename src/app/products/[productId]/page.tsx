@@ -1,9 +1,18 @@
 import React from "react";
 import Info from "@/components/Info";
 
-export const metadata = {
-  title: "Product Details",
-  description: "This is the product details page of my Next.js app",
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { productId: string };
+}) => {
+  const title = await new Promise((resolve) => {
+    resolve(`Product iphone  ${params.productId}`);
+  });
+  return {
+    title,
+    description: "This is the product details page of my Next.js app",
+  };
 };
 
 function ProductDetails({ params }: { params: { productId: string } }) {

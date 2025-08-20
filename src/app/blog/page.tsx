@@ -1,16 +1,27 @@
+"use client";
 import Info from "@/components/Info";
 
-export const metadata = {
-  title: "Blog Page",
-  description: "This is the blog page of my Next.js app",
-};
+import { useEffect, useState } from "react";
 
 function Blog() {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Info
-      title="Blog Page"
-      description="This is the blog page of my Next.js app"
-    />
+    <div>
+      {showContent && (
+        <Info
+          title="Blog Page"
+          description="This is the blog page of my Next.js app"
+        />
+      )}
+    </div>
   );
 }
 

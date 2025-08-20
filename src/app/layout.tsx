@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Next.js App",
+  title: {
+    // absolute: "",// no need of absolute title
+    default: "Next.js App",
+    template: "%s - Next.js App",
+  },
   description: "This is my Next.js app",
 };
 
