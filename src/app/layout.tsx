@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
+import "./golbal.css";
 
 export const metadata: Metadata = {
   title: {
